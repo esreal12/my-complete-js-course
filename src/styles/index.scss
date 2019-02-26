@@ -1,0 +1,13 @@
+@import 'base/config_global';
+@import 'base/base';
+@import 'base/mixins';
+
+// @import 'layout/grid';
+
+@import 'vendors/normalize';
+
+$body-color: blue;
+
+body {
+  color: $body-color;
+}

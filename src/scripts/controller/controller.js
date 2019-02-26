@@ -1,0 +1,1 @@
+console.log('%cController Ready! ✔️', 'color:#6CFF33');
