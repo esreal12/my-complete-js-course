@@ -308,7 +308,7 @@ Truthy and Falsy values and equality operators
 // // Equality Operators
 // if (height == '23') { // 
 //     console.log('The == operator does type coercion!');
-    
+
 // }
 
 
@@ -319,18 +319,108 @@ Truthy and Falsy values and equality operators
 Challenge Two
 ----------------------------------------------------------------------------------*/
 /* 
-John and Mike both play basketball in different teams. In the latest 3 games, John's team scored 89, 120 and 103 points, while Mike's team scored 116, 94 and 123 points.
+John and Mike both play basketball in different teams. In the latest 3 games, John's 
+team scored 89, 120 and 103 points, while Mike's team scored 116, 94 and 123 points.
+
 1. Calculate the average score for each team
-2. Decide which teams wins in average (highest average score), and print the winner to the console. Also include the average score in the output.
-3. Then change the scores to show different winners. Don't forget to take into account there might be a draw (the same average score)
-4. EXTRA: Mary also plays basketball, and her team scored 97, 134 and 105 points. Like before, log the average winner to the console. HINT: you will need the && operator to take the decision. If you can't solve this one, just watch the solution, it's no problem :)
+2. Decide which teams wins in average (highest average score), and print the winner to 
+   the console. Also include the average score in the output.
+3. Then change the scores to show different winners. Don't forget to take into account 
+   there might be a draw (the same average score)
+4. EXTRA: Mary also plays basketball, and her team scored 97, 134 and 105 points. 
+   Like before, log the average winner to the console. HINT: you will need the && operator 
+   to take the decision. If you can't solve this one, just watch the solution, it's no problem :)
 5. Like before, change the scores to generate different winners, keeping in mind there might be draws.
-GOOD LUCK 😀
+   GOOD LUCK 😀
 */
 
-var johnTeamAvg = 89 + 120 + 103 / 3;
-var mikeTeamAvg = 116 + 94 + 123 / 3;
+// var johnTeamAvg = (89 + 120 + 103) / 3;
+// var mikeTeamAvg = (116 + 94 + 123) / 3;
+// var maryTeamAvg = (97 + 134 + 105) / 3;
 
-console.log(johnTeamAvg, mikeTeamAvg);
+// console.log(johnTeamAvg, mikeTeamAvg, maryTeamAvg);
 
-if 
+// console.log("%cIf Statement:", 'color: #FF7433; font-weight: bolder');
+// if (johnTeamAvg > mikeTeamAvg && johnTeamAvg > maryTeamAvg) {               // John has highest average
+//     console.log('John\'s Team has the highest average score ' + johnTeamAvg);
+// } else if (mikeTeamAvg > johnTeamAvg && mikeTeamAvg > maryTeamAvg) {        // Mike has the highest average
+//     console.log('Mike\'s Team has the highest average score ' + mikeTeamAvg);
+// } else if (maryTeamAvg > johnTeamAvg && maryTeamAvg > mikeTeamAvg) {        // Mary has the highest average 
+//     console.log('Mary\'s Team has the highest average score ' + maryTeamAvg);
+// } else if (johnTeamAvg == mikeTeamAvg && johnTeamAvg == maryTeamAvg) {      // All teams have same average
+//     console.log('All teams have the same average score');
+// } else if (johnTeamAvg == mikeTeamAvg && johnTeamAvg > maryTeamAvg) {       // John and Mike have the highest average
+//     console.log('John\'s and Mike\'s Teams have the highest average score');
+// } else if (mikeTeamAvg == maryTeamAvg && mikeTeamAvg > johnTeamAvg) {       // Mike and Mary have the highest average
+//     console.log('Mike\'s and Mary\'s Teams have the highest average score');
+// } else {
+//     console.log('John\'s and Mary\'s Teams have the highest average score');// John and Mary have the highest average
+// }
+
+// console.log("%cSwitch Statement:", 'color: #FF7433; font-weight: bolder');
+// switch (true) {
+//     case johnTeamAvg > mikeTeamAvg && johnTeamAvg > maryTeamAvg:            // John has highest average
+//         console.log('John\'s Team has the highest average score');
+//         break;
+//     case mikeTeamAvg > johnTeamAvg && mikeTeamAvg > maryTeamAvg:            // Mike has the highest average
+//         console.log('Mike\'s Team has the highest average score');
+//         break;
+//     case maryTeamAvg > johnTeamAvg && maryTeamAvg > mikeTeamAvg:            // Mary has the highest average 
+//         console.log('Mary\'s Team has the highest average score');
+//         break;
+//     case johnTeamAvg == mikeTeamAvg && johnTeamAvg == maryTeamAvg:          // All teams have same average
+//         console.log('All teams have the same average score');
+//         break;
+//     case johnTeamAvg == mikeTeamAvg && johnTeamAvg == maryTeamAvg:          // John and Mike have the highest average
+//         console.log('Mary\'s Team has the highest average score');
+//         break;
+//     case mikeTeamAvg == maryTeamAvg && mikeTeamAvg > johnTeamAvg:           // Mike and Mary have the highest average
+//         console.log('Mike\'s and Mary\'s Teams have the highest average score');
+//         break;
+//     default:                                                                // John and Mary have the highest average
+//         console.log('John\'s and Mary\'s Teams have the highest average score');
+//         break;
+// }
+
+
+
+
+
+/***********************************************************************************
+Functions
+************************************************************************************/
+// console.log("%cFunctions:", 'color: #FF7433; font-weight: bolder');
+
+// function calculateAge(birthYear) {
+//     return 2018 - birthYear;
+// }
+
+// var ageIsrael = calculateAge(1989);
+// var ageSebastian = calculateAge(1992);
+// var ageIsabel = calculateAge(2003); 
+
+// console.log(ageIsrael, ageSebastian, ageIsabel);
+
+// function yearsUntilRetirement(year, firstName) {
+//     var age = calculateAge(year);
+//     var retirement = 65 - age;
+
+//     if (retirement > 0){
+//         console.log(firstName + ' retires in ' + retirement + ' years.');
+//     } else {
+//         console.log(firstName + ' is already retired.');
+//     }
+// }
+
+// yearsUntilRetirement(1989, 'Israel');
+// yearsUntilRetirement(1992, 'Sebastián');
+// yearsUntilRetirement(2003, 'Isabel');
+
+
+
+
+
+/***********************************************************************************
+Functions Statements and Expressions
+************************************************************************************/
+console.log("%cFunctions Statements and Expressions:", 'color: #FF7433; font-weight: bolder');
