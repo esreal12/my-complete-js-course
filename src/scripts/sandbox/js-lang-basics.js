@@ -2,7 +2,7 @@ import './js-lang-basics-header';
 
 
 /***********************************************************************************
-Variables and Data Types
+    Variables and Data Types
 ************************************************************************************/
 // console.log("%cVariables and Data Types:", 'color: #FF7433; font-weight: bolder');
 
@@ -26,7 +26,7 @@ Variables and Data Types
 
 
 /***********************************************************************************
-Variable Mutation and Type Coercion
+    Variable Mutation and Type Coercion
 ************************************************************************************/
 // console.log("%cVariable Mutation and Type Coercion:", 'color: #FF7433; font-weight: bolder');
 
@@ -55,7 +55,7 @@ Variable Mutation and Type Coercion
 
 
 /***********************************************************************************
-Basic Operations
+    Basic Operations
 ************************************************************************************/
 // console.log("%cBasic Operations:", 'color: #FF7433; font-weight: bolder');
 
@@ -94,7 +94,7 @@ Basic Operations
 
 
 /***********************************************************************************
-Operator Precedence
+    Operator Precedence
 ************************************************************************************/
 // console.log("%cOperator Precedence:", 'color: #FF7433; font-weight: bolder');
 
@@ -144,7 +144,7 @@ Operator Precedence
 
 
 /*---------------------------------------------------------------------------------
-Challenge One
+    Challenge One
 ----------------------------------------------------------------------------------*/
 /*
 Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
@@ -182,7 +182,7 @@ GOOD LUCK 😀
 
 
 /***********************************************************************************
-If / Else Statements
+    If / Else Statements
 ************************************************************************************/
 // console.log("%cIf / Else Statements:", 'color: #FF7433; font-weight: bolder');
 
@@ -208,7 +208,7 @@ If / Else Statements
 
 
 /***********************************************************************************
-Boolean Logic
+    Boolean Logic
 ************************************************************************************/
 // console.log("%cBoolean Logic:", 'color: #FF7433; font-weight: bolder');
 
@@ -230,7 +230,7 @@ Boolean Logic
 
 
 /***********************************************************************************
-The Ternary Operator and Switch Statements
+    The Ternary Operator and Switch Statements
 ************************************************************************************/
 // console.log("%cThe Ternary Operator and Switch Statements:", 'color: #FF7433; font-weight: bolder');
 
@@ -284,7 +284,7 @@ The Ternary Operator and Switch Statements
 
 
 /***********************************************************************************
-Truthy and Falsy values and equality operators
+    Truthy and Falsy values and equality operators
 ************************************************************************************/
 // console.log("%cTruthy and Falsy values and equality operators:", 'color: #FF7433; font-weight: bolder');
 
@@ -316,7 +316,7 @@ Truthy and Falsy values and equality operators
 
 
 /*---------------------------------------------------------------------------------
-Challenge Two
+    Challenge Two
 ----------------------------------------------------------------------------------*/
 /* 
 John and Mike both play basketball in different teams. In the latest 3 games, John's 
@@ -387,7 +387,7 @@ team scored 89, 120 and 103 points, while Mike's team scored 116, 94 and 123 poi
 
 
 /***********************************************************************************
-Functions
+    Functions
 ************************************************************************************/
 // console.log("%cFunctions:", 'color: #FF7433; font-weight: bolder');
 
@@ -423,7 +423,7 @@ Functions
 /***********************************************************************************
 Functions Statements and Expressions
 ************************************************************************************/
-console.log("%cFunctions Statements and Expressions:", 'color: #FF7433; font-weight: bolder');
+// console.log("%cFunctions Statements and Expressions:", 'color: #FF7433; font-weight: bolder');
 
 // Function Declaration
 // function whatDoYouDo (job, firstName) {
@@ -432,22 +432,66 @@ console.log("%cFunctions Statements and Expressions:", 'color: #FF7433; font-wei
 
 
 // Function Expression
-var whatDoYouDo = function (job, firstName) {
-    switch(job) {
-        case 'Teacher':
-            return firstName + ' teaches kids how to code.'; // The return the value, and finishes inmediately the function, 
-        case 'Driver':                                      // the break is not necesary here.
-            return firstName + ' drives a Uber in Costa Rica.';    
-        case 'Designer':
-            return firstName + ' designs amazing websites.';
-        default:
-            return firstName + ' does something else.';
-    }
-};
+// var whatDoYouDo = function (job, firstName) {
+//     switch(job) {
+//         case 'Teacher':
+//             return firstName + ' teaches kids how to code.'; // The return the value, and finishes inmediately the function, 
+//         case 'Driver':                                      // the break is not necesary here.
+//             return firstName + ' drives a Uber in Costa Rica.';    
+//         case 'Designer':
+//             return firstName + ' designs amazing websites.';
+//         default:
+//             return firstName + ' does something else.';
+//     }
+// };
 
-console.log(whatDoYouDo('Designer', 'Israel'));
-console.log(whatDoYouDo('Driver', 'Sebastián'));
-console.log(whatDoYouDo('Teacher', 'Isabel'));
+// console.log(whatDoYouDo('Designer', 'Israel'));
+// console.log(whatDoYouDo('Driver', 'Sebastián'));
+// console.log(whatDoYouDo('Teacher', 'Isabel'));
 
-console.log("%cJs expressions are pieces of code that always produce a value or a result.", 'color: #FC9869; font-weight: bolder');
-console.log("%cJs Statements don't produce any immediate value.", 'color: #FC9869; font-weight: bolder');
+// console.log("%cJs expressions are pieces of code that always produce a value or a result.", 'color: #FC9869; font-weight: bolder');
+// console.log("%cJs Statements don't produce any immediate value.", 'color: #FC9869; font-weight: bolder');
+
+
+
+
+
+/***********************************************************************************
+    Arrays
+************************************************************************************/
+console.log("%cArrays:", 'color: #FF7433; font-weight: bolder');
+
+// Initialize New Array
+var names = ['Isabel', 'Sebastián', 'Israel'];
+var years = new Array(2004, 1992, 1989);
+
+console.log(names[0]);
+console.log(names.length);
+
+// Mutate Array Data
+names[1] = 'Esreal';
+console.log(names);
+
+names[names.length] = 'Jacob';
+console.log(names);
+
+// Different Data Types
+var esreal = ['Esreal', 'Umaña', 1989, 'Painter', true];
+
+// Add elements
+esreal.push('orange'); // .push(); Inserta elementos al final del array
+esreal.unshift('Mr.'); // .unshift(); Inserta elementos al inicio del array
+console.log(esreal);
+
+// Remove elements
+esreal.pop(); // Elimina el último elemento del array
+console.log(esreal);
+
+esreal.shift(); // Elimina el primer elemento del array
+console.log(esreal);
+
+console.log(esreal.indexOf(1989)); // IndexOf indica la posición en la que se encuentra un elemento del array  
+console.log(esreal.indexOf(78)); // Va a dar como resultado -1 porque el elemento no existe en el array
+
+var isPainter = esreal.indexOf('Painter') === -1 ? 'Esreal is NOT a Painter' : 'Esreal IS a Painter';
+console.log(isPainter);
