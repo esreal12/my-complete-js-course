@@ -424,3 +424,30 @@ Functions
 Functions Statements and Expressions
 ************************************************************************************/
 console.log("%cFunctions Statements and Expressions:", 'color: #FF7433; font-weight: bolder');
+
+// Function Declaration
+// function whatDoYouDo (job, firstName) {
+
+// }
+
+
+// Function Expression
+var whatDoYouDo = function (job, firstName) {
+    switch(job) {
+        case 'Teacher':
+            return firstName + ' teaches kids how to code.'; // The return the value, and finishes inmediately the function, 
+        case 'Driver':                                      // the break is not necesary here.
+            return firstName + ' drives a Uber in Costa Rica.';    
+        case 'Designer':
+            return firstName + ' designs amazing websites.';
+        default:
+            return firstName + ' does something else.';
+    }
+};
+
+console.log(whatDoYouDo('Designer', 'Israel'));
+console.log(whatDoYouDo('Driver', 'Sebastián'));
+console.log(whatDoYouDo('Teacher', 'Isabel'));
+
+console.log("%cJs expressions are pieces of code that always produce a value or a result.", 'color: #FC9869; font-weight: bolder');
+console.log("%cJs Statements don't produce any immediate value.", 'color: #FC9869; font-weight: bolder');
