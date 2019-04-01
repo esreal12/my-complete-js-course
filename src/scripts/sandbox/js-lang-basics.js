@@ -459,39 +459,135 @@ Functions Statements and Expressions
 /***********************************************************************************
     Arrays
 ************************************************************************************/
-console.log("%cArrays:", 'color: #FF7433; font-weight: bolder');
+// console.log("%cArrays:", 'color: #FF7433; font-weight: bolder');
 
-// Initialize New Array
-var names = ['Isabel', 'Sebastián', 'Israel'];
-var years = new Array(2004, 1992, 1989);
+// // Initialize New Array
+// var names = ['Isabel', 'Sebastián', 'Israel'];
+// var years = new Array(2004, 1992, 1989);
 
-console.log(names[0]);
-console.log(names.length);
+// console.log(names[0]);
+// console.log(names.length);
 
-// Mutate Array Data
-names[1] = 'Esreal';
-console.log(names);
+// // Mutate Array Data
+// names[1] = 'Esreal';
+// console.log(names);
 
-names[names.length] = 'Jacob';
-console.log(names);
+// names[names.length] = 'Jacob';
+// console.log(names);
 
-// Different Data Types
-var esreal = ['Esreal', 'Umaña', 1989, 'Painter', true];
+// // Different Data Types
+// var esreal = ['Esreal', 'Umaña', 1989, 'Painter', true];
 
-// Add elements
-esreal.push('orange'); // .push(); Inserta elementos al final del array
-esreal.unshift('Mr.'); // .unshift(); Inserta elementos al inicio del array
-console.log(esreal);
+// // Add elements
+// esreal.push('orange'); // .push(); Inserta elementos al final del array
+// esreal.unshift('Mr.'); // .unshift(); Inserta elementos al inicio del array
+// console.log(esreal);
 
-// Remove elements
-esreal.pop(); // Elimina el último elemento del array
-console.log(esreal);
+// // Remove elements
+// esreal.pop(); // Elimina el último elemento del array
+// console.log(esreal);
 
-esreal.shift(); // Elimina el primer elemento del array
-console.log(esreal);
+// esreal.shift(); // Elimina el primer elemento del array
+// console.log(esreal);
 
-console.log(esreal.indexOf(1989)); // IndexOf indica la posición en la que se encuentra un elemento del array  
-console.log(esreal.indexOf(78)); // Va a dar como resultado -1 porque el elemento no existe en el array
+// console.log(esreal.indexOf(1989)); // IndexOf indica la posición en la que se encuentra un elemento del array  
+// console.log(esreal.indexOf(78)); // Va a dar como resultado -1 porque el elemento no existe en el array
 
-var isPainter = esreal.indexOf('Painter') === -1 ? 'Esreal is NOT a Painter' : 'Esreal IS a Painter';
-console.log(isPainter);
+// var isPainter = esreal.indexOf('Painter') === -1 ? 'Esreal is NOT a Painter' : 'Esreal IS a Painter';
+// console.log(isPainter);
+
+
+
+
+
+/*---------------------------------------------------------------------------------
+    Challenge Three
+----------------------------------------------------------------------------------*/
+
+/*
+John and his family went on a holiday and went to 3 different restaurants. The bills were $124, $48 and $268.
+To tip the waiter a fair amount, John created a simple tip calculator (as a function). He likes to tip 20% of 
+the bill when the bill is less than $50, 15% when the bill is between $50 and $200, and 10% if the bill is more than $200.
+
+In the end, John would like to have 2 arrays:
+
+1) Containing all three tips (one for each bill)
+
+2) Containing all three final paid amounts (bill + tip).
+
+(NOTE: To calculate 20% of a value, simply multiply it with 20/100 = 0.2)
+GOOD LUCK 😀
+*/
+
+//  function tip calculator
+// function tipCalculator(bill) {
+   
+//     var percentage;
+    
+//     if (bill < 50) {
+//         percentage = .2;
+//     } else if (bill > 50 && bill < 200) {
+//         percentage = .15;
+//     } else {
+//         percentage = .1;
+//     };
+
+//     return percentage * bill;
+// }
+
+// var bills = [124, 48, 268];
+
+// var tips = [Math.round(tipCalculator(bills[0])),
+//             Math.round(tipCalculator(bills[1])),
+//             Math.round(tipCalculator(bills[2]))];
+
+// var finalAmounts = [bills[0] + tips[0],
+//                     bills[1] + tips[1],
+//                     bills[2] + tips[2]];
+
+// console.log('All the Tips: ' + tips + ' / ' + 'Final amounts: ' + finalAmounts);
+
+
+
+
+
+/***********************************************************************************
+    Objects and Properties
+************************************************************************************/
+// console.log("%cObjects and Properties:", 'color: #FF7433; font-weight: bolder');
+
+// var israel = {
+//     name: 'Israel',
+//     lastName: 'Umaña Sedó',
+//     birthYear: 1989,
+//     familyMembers: ['Maureem', 'Mima', 'Sebastián', 'Gabriel', 'Isabel'],
+//     job: 'Web Content Developer', 
+//     isMarried: false
+// };
+
+// console.log(israel.familyMembers); // Dot notation
+
+// console.log(israel['lastName']); // Key Name notation 
+
+// var x = 'birthYear';
+// console.log(israel[x]);
+
+
+// israel.job = 'Designer';
+// israel['isMarried'] = true;
+// console.log(israel);
+
+// var shebillo = new Object();
+// shebillo.firstName = 'Sebastián';
+// shebillo.birthYear = 1992;
+// shebillo['lastName'] = 'Umaña Sedó';
+// console.log(shebillo); 
+
+
+
+
+
+/***********************************************************************************
+    Objects and Methods
+************************************************************************************/
+console.log("%cObjects and Methods:", 'color: #FF7433; font-weight: bolder');
