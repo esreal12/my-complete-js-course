@@ -607,9 +607,9 @@ GOOD LUCK 😀
 
 
 /*---------------------------------------------------------------------------------
-    Challenge Three
+    Challenge Four
 ----------------------------------------------------------------------------------*/
-console.log("%cChallenge 3:", 'color: #FF7433; font-weight: bolder');
+console.log("%cChallenge 4:", 'color: #FF7433; font-weight: bolder');
 /*
 Let's remember the first coding challenge where Mark and John compared their BMIs. 
 Let's now implement the same functionality with objects and methods.
@@ -633,7 +633,7 @@ var john = {
     calcBMI: function() {
         this.BMI = Math.round(this.mass / (this.height * 2));
     }
-}
+};
 
 john.calcBMI();
 console.log(john.BMI);
@@ -647,7 +647,7 @@ var mark = {
     calcBMI: function() {
         this.BMI = Math.round(this.mass / (this.height * 2));
     }
-}
+};
 
 mark.calcBMI();
 console.log(mark.BMI);
@@ -656,10 +656,9 @@ var j = john;
 var m = mark;
 
 if (j.BMI > m.BMI) {
-    console.log('John has the highest BMI with: ' + john.BMI);
+    console.log('John has the highest BMI with: ' + j.BMI);
 } else if (j.BMI == m.BMI) {
     console.log('Both have ' + j.BMI + ' BMI');
 } else {
-    console.log('Mark has the highest BMI with: ' + mark.BMI);
-    
-}
+    console.log('Mark has the highest BMI with: ' + m.BMI);
+};
