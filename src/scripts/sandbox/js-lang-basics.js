@@ -609,7 +609,7 @@ GOOD LUCK 😀
 /*---------------------------------------------------------------------------------
     Challenge Four
 ----------------------------------------------------------------------------------*/
-console.log("%cChallenge 4:", 'color: #FF7433; font-weight: bolder');
+// console.log("%cChallenge 4:", 'color: #FF7433; font-weight: bolder');
 /*
 Let's remember the first coding challenge where Mark and John compared their BMIs. 
 Let's now implement the same functionality with objects and methods.
@@ -625,40 +625,86 @@ respective BMI. Don't forget they might have the same BMI.
 Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
 */
 
-var john = {
-    firstName:  'John',
-    lastName:   'Smith',
-    mass:       79,
-    height:     1.78,
-    calcBMI: function() {
-        this.BMI = Math.round(this.mass / (this.height * 2));
-    }
-};
+// var john = {
+//     firstName:  'John',
+//     lastName:   'Smith',
+//     mass:       73,
+//     height:     1.78,
+//     calcBMI: function() {
+//         this.BMI = Math.round(this.mass / (this.height * this.height));
+//         return this.BMI;
+//     }
+// };
 
-john.calcBMI();
-console.log(john.BMI);
+// var mark = {
+//     firstName:  'Mark',
+//     lastName:   'Railey',
+//     mass:       79,
+//     height:     1.79,
+//     calcBMI: function() {
+//         this.BMI = Math.round(this.mass / (this.height * this.height));
+//         return this.BMI;
+//     }
+// };
+
+// if (john.calcBMI() > mark.calcBMI()) { // Se pueden correr las funcines dentro del If Statement
+//     console.log('John has the highest BMI with: ' + john.BMI);
+// } else if (john.BMI == mark.BMI) {
+//     console.log('Both have ' + john.BMI + ' BMI');
+// } else {
+//     console.log('Mark has the highest BMI with: ' + mark.BMI);
+// };
 
 
-var mark = {
-    firstName:  'Mark',
-    lastName:   'Railey',
-    mass:       79,
-    height:     1.78,
-    calcBMI: function() {
-        this.BMI = Math.round(this.mass / (this.height * 2));
-    }
-};
 
-mark.calcBMI();
-console.log(mark.BMI);
 
-var j = john;
-var m = mark;
 
-if (j.BMI > m.BMI) {
-    console.log('John has the highest BMI with: ' + j.BMI);
-} else if (j.BMI == m.BMI) {
-    console.log('Both have ' + j.BMI + ' BMI');
-} else {
-    console.log('Mark has the highest BMI with: ' + m.BMI);
-};
+/***********************************************************************************
+    Loops and Iteration
+************************************************************************************/
+// console.log("%cLoops and Iteration:", 'color: #FF7433; font-weight: bolder');
+
+// // For Loop
+
+// for (var i = 1; i <= 20; i+=2) {
+//     console.log(i);
+// }
+
+// var esreal = ['Esreal', 'Umaña', 1989, 'Painter', true];
+// for (var i = 0; i < esreal.length; i++) {
+//     console.log(esreal[i]);
+// }
+
+// // While Loop
+
+// var i = 0;
+// while (i < esreal.length) {
+//     console.log(esreal[i]);
+//     i++;
+// }
+
+// Continue and Break Statements
+// var esreal = ['Esreal', 'Umaña', 1989, 'Painter', true, 'Orange'];
+// for (var i = 0; i < esreal.length; i++) {
+    // if (typeof esreal[i] !== 'string') continue;
+    // console.log(esreal[i]);
+// }
+
+// for (var i = 0; i < esreal.length; i++) {
+//     if (typeof esreal[i] !== 'string') break;
+//     console.log(esreal[i]);
+// }
+
+// Looping Backwards
+// for (var i = esreal.length - 1; i >= 0; i--) {
+//     console.log(esreal[i]);
+// }
+
+
+
+
+
+/*---------------------------------------------------------------------------------
+    Challenge Five
+----------------------------------------------------------------------------------*/
+console.log("%cChallenge 5:", 'color: #FF7433; font-weight: bolder');
