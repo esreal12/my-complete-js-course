@@ -737,6 +737,8 @@ console.log("%cChallenge 5:", 'color: #FF7433; font-weight: bolder');
 
 // 8. Log to the console which family paid the highest tips on average
 
+// Mi forma de resolverlo
+ 
 var johnPercentage, markPercentage;
 
 var johnBills = {
@@ -744,18 +746,21 @@ var johnBills = {
     finalTips: [],
     finalPaidAmounts: [],
     tipCalculator: function () {
-        for (var i = 0; i < this.bills.length; i++) {
-            if (this.bills[i] < 20) {
+        var bills = this.bills.length;
+
+        // Método 1 para agregar los final tips a los arrays a través de .push();
+        for (var i = 0; i < bills; i++) {
+            if (bills < 20) {
                 johnPercentage = .2; 
-                this.finalTips.push(johnPercentage * this.bills[i]);
-            } else if (this.bills[i] >= 50 && this.bills[i] <= 200) {
+                this.finalTips.push(johnPercentage * bills);
+            } else if (bills >= 50 && bills <= 200) {
                 johnPercentage = .15;
-                this.finalTips.push(johnPercentage * this.bills[i]);
+                this.finalTips.push(johnPercentage * bills);
             } else {
                 johnPercentage = .1;
-                this.finalTips.push(johnPercentage * this.bills[i]);
+                this.finalTips.push(johnPercentage * bills);
             }
-            this.finalPaidAmounts.push(this.finalTips[i] + this.bills[i]);
+            this.finalPaidAmounts.push(this.finalTips[i] + bills);
         }
     }
 };
@@ -766,25 +771,27 @@ console.log('John\'s Final Amounts: ' + johnBills.finalPaidAmounts);
 
 var markBills = {
     bills: [77, 375, 110, 45],
-    finalTips: [],
-    finalPaidAmounts: [],
 
+    // Metodo 2 para agregar los final tips fuera del if statement y sin usar .push(); 
+    
     tipCalculator: function () {
         for (var i = 0; i < this.bills.length; i++) {
-            if (this.bills[i] < 100) {
+            var bill = this.bills[i];
+            
+            if (bill < 100) {
                 markPercentage = .2; 
-                this.finalTips.push(markPercentage * this.bills[i]);
-            } else if (this.bills[i] >= 100 && this.bills[i] <= 300) {
+            } else if (bills >= 100 && bills <= 300) {
                 markPercentage = .1;
-                this.finalTips.push(markPercentage * this.bills[i]);
             } else {
                 markPercentage = .25;
-                this.finalTips.push(markPercentage * this.bills[i]);
             }
-            this.finalPaidAmounts.push(this.finalTips[i] + this.bills[i]);
+
+            this.finalTips[i] = bill * markPercentage;
+            this.finalPaidAmounts[i] = bill + bill * markPercentage;
         }
     }
 };
+
 markBills.tipCalculator();
 console.log('Mark\'s Tips: ' + markBills.finalTips);
 console.log('Mark\'s Final Amounts: ' + markBills.finalPaidAmounts);
@@ -809,3 +816,36 @@ if (johnTipsAverage > markTipsAverage) {
 } else {
     console.log('Marks\'s tips average is higher than John\'s');
 }
+
+
+// La forma de Jonas de resolverlo pero usando mi código refactoriado
+
+var johnPercentage, markPercentage;
+
+var johnBills = {
+    bills: [124, 48, 268, 180, 42],
+    finalTips: [],
+    finalPaidAmounts: [],
+    tipCalculator: function () {
+        var bills = this.bills.length;
+
+        // Método 1 para agregar los final tips a los arrays a través de .push();
+        for (var i = 0; i < bills; i++) {
+            if (bills < 20) {
+                johnPercentage = .2; 
+                this.finalTips.push(johnPercentage * bills);
+            } else if (bills >= 50 && bills <= 200) {
+                johnPercentage = .15;
+                this.finalTips.push(johnPercentage * bills);
+            } else {
+                johnPercentage = .1;
+                this.finalTips.push(johnPercentage * bills);
+            }
+            this.finalPaidAmounts.push(this.finalTips[i] + bills);
+        }
+    }
+};
+johnBills.tipCalculator();
+
+console.log('John\'s Tips: ' + johnBills.finalTips);
+console.log('John\'s Final Amounts: ' + johnBills.finalPaidAmounts);
