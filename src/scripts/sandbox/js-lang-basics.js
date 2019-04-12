@@ -613,15 +613,11 @@ GOOD LUCK 😀
 /*
 Let's remember the first coding challenge where Mark and John compared their BMIs. 
 Let's now implement the same functionality with objects and methods.
-
 1. For each of them, create an object with properties for their full name, mass, and height
-
 2. Then, add a method to each object to calculate the BMI. Save the BMI to the object and 
 also return it from the method.
-
 3. In the end, log to the console who has the highest BMI, together with the full name and the 
 respective BMI. Don't forget they might have the same BMI.
-
 Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
 */
 
@@ -737,115 +733,168 @@ console.log("%cChallenge 5:", 'color: #FF7433; font-weight: bolder');
 
 // 8. Log to the console which family paid the highest tips on average
 
-// Mi forma de resolverlo
- 
-var johnPercentage, markPercentage;
+// Mi metodo:
 
-var johnBills = {
+// var johnPercentage, markPercentage;
+
+// var johnBills = {
+//     bills: [124, 48, 268, 180, 42],
+//     finalTips: [],
+//     finalPaidAmounts: [],
+//     tipCalculator: function () {
+//         for (var i = 0; i < this.bills.length; i++) {
+//             if (this.bills[i] < 20) {
+//                 johnPercentage = .2; 
+//                 this.finalTips.push(johnPercentage * this.bills[i]);
+//             } else if (this.bills[i] >= 50 && this.bills[i] <= 200) {
+//                 johnPercentage = .15;
+//                 this.finalTips.push(johnPercentage * this.bills[i]);
+//             } else {
+//                 johnPercentage = .1;
+//                 this.finalTips.push(johnPercentage * this.bills[i]);
+//             }
+//             this.finalPaidAmounts.push(this.finalTips[i] + this.bills[i]);
+//         }
+//     }
+// };
+// johnBills.tipCalculator();
+
+// console.log('John\'s Tips: ' + johnBills.finalTips);
+// console.log('John\'s Final Amounts: ' + johnBills.finalPaidAmounts);
+
+// var markBills = {
+//     bills: [77, 375, 110, 45],
+//     finalTips: [],
+//     finalPaidAmounts: [],
+
+//     tipCalculator: function () {
+//         for (var i = 0; i < this.bills.length; i++) {
+//             if (this.bills[i] < 100) {
+//                 markPercentage = .2; 
+//                 this.finalTips.push(markPercentage * this.bills[i]);
+//             } else if (this.bills[i] >= 100 && this.bills[i] <= 300) {
+//                 markPercentage = .1;
+//                 this.finalTips.push(markPercentage * this.bills[i]);
+//             } else {
+//                 markPercentage = .25;
+//                 this.finalTips.push(markPercentage * this.bills[i]);
+//             }
+//             this.finalPaidAmounts.push(this.finalTips[i] + this.bills[i]);
+//         }
+//     }
+// };
+// markBills.tipCalculator();
+// console.log('Mark\'s Tips: ' + markBills.finalTips);
+// console.log('Mark\'s Final Amounts: ' + markBills.finalPaidAmounts);
+
+// var johnTips   = johnBills.finalTips;
+// var markTips   = markBills.finalTips;
+
+// function tipsAverage (tips) {
+//     for(var j = 0; j < tips; j++) {
+//         var tipsSum = tips[j]++;
+//     }
+//     return tipsSum / tips.length;
+// }
+
+// var johnTipsAverage = tipsAverage(johnTips);
+// var markTipsAverage = tipsAverage(markTips);
+
+// if (johnTipsAverage > markTipsAverage) {
+//     console.log('John\'s tips average is higher than Mark\'s');
+// } else if (johnTipsAverage == markTipsAverage) {
+//     console.log('John\'s tips average is the same as Mark\'s');
+// } else {
+//     console.log('Marks\'s tips average is higher than John\'s');
+// }
+
+// El metodo de Jonas
+
+var israel = {
+    fullName: 'Israel Umaña Sedó',
     bills: [124, 48, 268, 180, 42],
-    finalTips: [],
-    finalPaidAmounts: [],
-    tipCalculator: function () {
-        var bills = this.bills.length;
+    calcTips: function() {
 
-        // Método 1 para agregar los final tips a los arrays a través de .push();
-        for (var i = 0; i < bills; i++) {
-            if (bills < 20) {
-                johnPercentage = .2; 
-                this.finalTips.push(johnPercentage * bills);
-            } else if (bills >= 50 && bills <= 200) {
-                johnPercentage = .15;
-                this.finalTips.push(johnPercentage * bills);
-            } else {
-                johnPercentage = .1;
-                this.finalTips.push(johnPercentage * bills);
-            }
-            this.finalPaidAmounts.push(this.finalTips[i] + bills);
-        }
-    }
-};
-johnBills.tipCalculator();
+        // En lugar de incluir tips y finalValues al inicio del objeto, 
+        // se agregan al método para que se haga de una forma más limpia, 
+        // o sea, cuando se inicia la función. 
+        this.tips = []; 
+        this.finalValues = [];
+        
+        for (var i = 0; i < this.bills.length; i++){
 
-console.log('John\'s Tips: ' + johnBills.finalTips);
-console.log('John\'s Final Amounts: ' + johnBills.finalPaidAmounts);
-
-var markBills = {
-    bills: [77, 375, 110, 45],
-
-    // Metodo 2 para agregar los final tips fuera del if statement y sin usar .push(); 
-    
-    tipCalculator: function () {
-        for (var i = 0; i < this.bills.length; i++) {
+            var percentage;
             var bill = this.bills[i];
-            
+
+            if (bill < 20) {
+                percentage = .2; 
+            } else if (bill >= 50 && bill < 200) {
+                percentage = .15;
+            } else {
+                percentage = .1;
+            }
+
+            // Esta solucion hace que se agreguen los elementos al array
+            // aprovechando la iteración del loop. No hace falta escribir .push();
+            this.tips[i] = bill * percentage;
+            this.finalValues[i] = bill + bill * percentage; 
+        }
+    }
+};
+
+var sebas = {
+    fullName: 'Sebastián Umaña Sedó',
+    bills: [77, 475, 110, 45],
+    calcTips: function() {
+
+        // En lugar de incluir tips y finalValues al inicio del objeto, 
+        // se agregan al método para que se haga de una forma más limpia, 
+        // o sea, cuando se inicia la función. 
+        this.tips = []; 
+        this.finalValues = [];
+        
+        for (var i = 0; i < this.bills.length; i++){
+
+            var percentage;
+            var bill = this.bills[i];
+
             if (bill < 100) {
-                markPercentage = .2; 
-            } else if (bills >= 100 && bills <= 300) {
-                markPercentage = .1;
+                percentage = .2; 
+            } else if (bill >= 100 && bill < 300) {
+                percentage = .1;
             } else {
-                markPercentage = .25;
+                percentage = .25;
             }
 
-            this.finalTips[i] = bill * markPercentage;
-            this.finalPaidAmounts[i] = bill + bill * markPercentage;
+            // Esta solucion hace que se agreguen los elementos al array
+            // aprovechando la iteración del loop. No hace falta escribir .push();
+            this.tips[i] = bill * percentage;
+            this.finalValues[i] = bill + bill * percentage; 
         }
     }
 };
 
-markBills.tipCalculator();
-console.log('Mark\'s Tips: ' + markBills.finalTips);
-console.log('Mark\'s Final Amounts: ' + markBills.finalPaidAmounts);
-
-var johnTips   = johnBills.finalTips;
-var markTips   = markBills.finalTips;
-
-function tipsAverage (tips) {
-    for(var j = 0; j < tips; j++) {
-        var tipsSum = tips[j]++;
+function calcAverage (tips) {
+    var sum = 0;
+    for (var i = 0; i < tips.length; i++) {
+        sum = sum + tips[i];
     }
-    return tipsSum / tips.length;
-}
 
-var johnTipsAverage = tipsAverage(johnTips);
-var markTipsAverage = tipsAverage(markTips);
-
-if (johnTipsAverage > markTipsAverage) {
-    console.log('John\'s tips average is higher than Mark\'s');
-} else if (johnTipsAverage == markTipsAverage) {
-    console.log('John\'s tips average is the same as Mark\'s');
-} else {
-    console.log('Marks\'s tips average is higher than John\'s');
-}
-
-
-// La forma de Jonas de resolverlo pero usando mi código refactoriado
-
-var johnPercentage, markPercentage;
-
-var johnBills = {
-    bills: [124, 48, 268, 180, 42],
-    finalTips: [],
-    finalPaidAmounts: [],
-    tipCalculator: function () {
-        var bills = this.bills.length;
-
-        // Método 1 para agregar los final tips a los arrays a través de .push();
-        for (var i = 0; i < bills; i++) {
-            if (bills < 20) {
-                johnPercentage = .2; 
-                this.finalTips.push(johnPercentage * bills);
-            } else if (bills >= 50 && bills <= 200) {
-                johnPercentage = .15;
-                this.finalTips.push(johnPercentage * bills);
-            } else {
-                johnPercentage = .1;
-                this.finalTips.push(johnPercentage * bills);
-            }
-            this.finalPaidAmounts.push(this.finalTips[i] + bills);
-        }
-    }
 };
-johnBills.tipCalculator();
 
-console.log('John\'s Tips: ' + johnBills.finalTips);
-console.log('John\'s Final Amounts: ' + johnBills.finalPaidAmounts);
+// Calculations
+israel.calcTips();
+sebas.calcTips();
+
+israel.average = calcAverage(israel.tips);
+sebas.average = calcAverage(sebas.tips);
+
+console.log(israel, sebas);
+
+if (israel.average > sebas.average) {
+    console.log(israel.fullName + ' pays higher tips, with an average of $' + israel.average);
+} else if {
+
+}
+
+https://www.udemy.com/the-complete-javascript-course/learn/lecture/10788494
