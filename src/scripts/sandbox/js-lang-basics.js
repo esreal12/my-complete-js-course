@@ -1,5 +1,6 @@
 import './js-lang-basics-header';
 import { isDeepStrictEqual } from 'util';
+import { Agent } from 'http';
 
 
 /***********************************************************************************
@@ -703,7 +704,7 @@ Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and heig
 /*---------------------------------------------------------------------------------
     Challenge Five
 ----------------------------------------------------------------------------------*/
-console.log("%cChallenge 5:", 'color: #FF7433; font-weight: bolder');
+// console.log("%cChallenge 5:", 'color: #FF7433; font-weight: bolder');
 
 // Remember the tip calculator challenge? Let's create a more advanced version using everything we learned!
 // This time, John and his family went to 5 different restaurants. The bills were $124, $48, $268, $180 and $42.
@@ -810,91 +811,109 @@ console.log("%cChallenge 5:", 'color: #FF7433; font-weight: bolder');
 
 // El metodo de Jonas
 
-var israel = {
-    fullName: 'Israel Umaña Sedó',
-    bills: [124, 48, 268, 180, 42],
-    calcTips: function() {
+// var israel = {
+//     fullName: 'Israel Umaña Sedó',
+//     bills: [124, 48, 268, 180, 42],
+//     calcTips: function() {
 
-        // En lugar de incluir tips y finalValues al inicio del objeto, 
-        // se agregan al método para que se haga de una forma más limpia, 
-        // o sea, cuando se inicia la función. 
-        this.tips = []; 
-        this.finalValues = [];
+//         // En lugar de incluir tips y finalValues al inicio del objeto, 
+//         // se agregan al método para que se haga de una forma más limpia, 
+//         // o sea, cuando se inicia la función. 
+//         this.tips = []; 
+//         this.finalValues = [];
         
-        for (var i = 0; i < this.bills.length; i++){
+//         for (var i = 0; i < this.bills.length; i++){
 
-            var percentage;
-            var bill = this.bills[i];
+//             var percentage;
+//             var bill = this.bills[i];
 
-            if (bill < 20) {
-                percentage = .2; 
-            } else if (bill >= 50 && bill < 200) {
-                percentage = .15;
-            } else {
-                percentage = .1;
-            }
+//             if (bill < 20) {
+//                 percentage = .2; 
+//             } else if (bill >= 50 && bill < 200) {
+//                 percentage = .15;
+//             } else {
+//                 percentage = .1;
+//             }
 
-            // Esta solucion hace que se agreguen los elementos al array
-            // aprovechando la iteración del loop. No hace falta escribir .push();
-            this.tips[i] = bill * percentage;
-            this.finalValues[i] = bill + bill * percentage; 
-        }
-    }
-};
+//             // Esta solucion hace que se agreguen los elementos al array
+//             // aprovechando la iteración del loop. No hace falta escribir .push();
+//             this.tips[i] = bill * percentage;
+//             this.finalValues[i] = bill + bill * percentage; 
+//         }
+//     }
+// };
 
-var sebas = {
-    fullName: 'Sebastián Umaña Sedó',
-    bills: [77, 475, 110, 45],
-    calcTips: function() {
+// var sebas = {
+//     fullName: 'Sebastián Umaña Sedó',
+//     bills: [77, 475, 110, 45],
+//     calcTips: function() {
 
-        // En lugar de incluir tips y finalValues al inicio del objeto, 
-        // se agregan al método para que se haga de una forma más limpia, 
-        // o sea, cuando se inicia la función. 
-        this.tips = []; 
-        this.finalValues = [];
+//         // En lugar de incluir tips y finalValues al inicio del objeto, 
+//         // se agregan al método para que se haga de una forma más limpia, 
+//         // o sea, cuando se inicia la función. 
+//         this.tips = []; 
+//         this.finalValues = [];
         
-        for (var i = 0; i < this.bills.length; i++){
+//         for (var i = 0; i < this.bills.length; i++){
 
-            var percentage;
-            var bill = this.bills[i];
+//             var percentage;
+//             var bill = this.bills[i];
 
-            if (bill < 100) {
-                percentage = .2; 
-            } else if (bill >= 100 && bill < 300) {
-                percentage = .1;
-            } else {
-                percentage = .25;
-            }
+//             if (bill < 100) {
+//                 percentage = .2; 
+//             } else if (bill >= 100 && bill < 300) {
+//                 percentage = .1;
+//             } else {
+//                 percentage = .25;
+//             }
 
-            // Esta solucion hace que se agreguen los elementos al array
-            // aprovechando la iteración del loop. No hace falta escribir .push();
-            this.tips[i] = bill * percentage;
-            this.finalValues[i] = bill + bill * percentage; 
-        }
-    }
-};
+//             // Esta solucion hace que se agreguen los elementos al array
+//             // aprovechando la iteración del loop. No hace falta escribir .push();
+//             this.tips[i] = bill * percentage;
+//             this.finalValues[i] = bill + bill * percentage; 
+//         }
+//     }
+// };
 
-function calcAverage (tips) {
-    var sum = 0;
-    for (var i = 0; i < tips.length; i++) {
-        sum = sum + tips[i];
-    }
+// function calcAverage (tips) {
+//     var sum = 0;
+//     for (var i = 0; i < tips.length; i++) {
+//         sum = sum + tips[i];
+//     }
+//     return sum / tips.length;
 
-};
+// };
 
-// Calculations
-israel.calcTips();
-sebas.calcTips();
+// // Calculations
+// israel.calcTips();
+// sebas.calcTips();
 
-israel.average = calcAverage(israel.tips);
-sebas.average = calcAverage(sebas.tips);
+// israel.average = calcAverage(israel.tips);
+// sebas.average = calcAverage(sebas.tips);
 
-console.log(israel, sebas);
+// console.log(israel, sebas);
 
-if (israel.average > sebas.average) {
-    console.log(israel.fullName + ' pays higher tips, with an average of $' + israel.average);
-} else if {
+// if (israel.average > sebas.average) {
+//     console.log(israel.fullName + ' pays higher tips, with an average of $' + israel.average);
+// } else if (israel.average == sebas.average) {
+//     console.log(israel.fullName + ' and ' + sebas.fullName + ' have the same average on tips');
+// } else {
+//     console.log(sebas.fullName + ' pays higher tips, with an average of $' + sebas.average);
+// };
 
+
+
+
+
+/***********************************************************************************
+    Hoisting
+************************************************************************************/
+console.log("%cHoisting:", 'color: #FF7433; font-weight: bolder');
+
+
+calculateAge(1965); // Hoisting es la habilidad de poder llamar a una función desde antes de que esta sea 
+                    // declarada.
+
+function calculateAge(year) { // Funciona en Functions Declaration
+    console.log(2019 - year);
 }
-
-https://www.udemy.com/the-complete-javascript-course/learn/lecture/10788494
