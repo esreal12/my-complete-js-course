@@ -908,12 +908,85 @@ Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and heig
 /***********************************************************************************
     Hoisting
 ************************************************************************************/
-console.log("%cHoisting:", 'color: #FF7433; font-weight: bolder');
+// console.log("%cHoisting:", 'color: #FF7433; font-weight: bolder');
 
 
-calculateAge(1965); // Hoisting es la habilidad de poder llamar a una función desde antes de que esta sea 
-                    // declarada.
+// calculateAge(1965); // Hoisting es la habilidad de poder llamar a una función desde antes de que esta sea 
+//                     // declarada.
 
-function calculateAge(year) { // Funciona en Functions Declaration
-    console.log(2019 - year);
-}
+// function calculateAge(year) { // Funciona en Functions Declaration
+//     console.log(2019 - year);
+// };
+
+// // En este caso, el Hoisting solo funciona con Function Declaration y no con Function Expressions
+// // retirement(1990);
+// // var retirement = function (year) {
+// //     console.log(65 - (2019 - year));
+// // };
+
+
+// console.log(age); //Undefined porque no se ha declarado la función aún.
+// var age = 24;
+// console.log(age); // Aquí ya está declarada
+
+
+// function foo() {
+//     var age = 65;
+//     console.log(age);
+// }
+// foo();
+
+// console.log(age);
+
+
+
+
+
+/***********************************************************************************
+    Scoping and the Scope Chain
+************************************************************************************/
+// console.log("%cScoping and the Scope Chain:", 'color: #FF7433; font-weight: bolder');
+
+// console.log(
+//     'Each new function creates a scope\nLexical Scoping: A function that is lexically within another' + 
+//     ' function\ngets access to the scope of the outer function.'
+// );
+
+
+
+
+
+/***********************************************************************************
+    THIS Keyword
+************************************************************************************/
+// console.log("%c\'This\' keyword:", 'color: #FF7433; font-weight: bolder');
+
+// // console.log(window);
+
+// // function calculateAge(year) {
+// //     console.log(2016-year);
+// //     console.log(this);
+// // }
+
+// var john = {
+//     name: 'John',
+//     yearOfBirth: 1990,
+//     calculateAge: function() {
+//         console.log(2019 - this.yearOfBirth);
+
+//         function innerFunc() {
+//             console.log(this);
+//         }
+//         innerFunc();
+//     }
+// };
+
+// john.calculateAge();
+
+// var mike = {
+//     name: 'Mike',
+//     yearOfBirth: 1985
+// };
+
+// mike.calculateAge = john.calculateAge;
+// mike.calculateAge();
