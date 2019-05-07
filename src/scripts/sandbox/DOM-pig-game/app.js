@@ -7,4 +7,51 @@ GAME RULES:
 - The first player to reach 100 points on GLOBAL score wins the game
 */
 
-console.log('Hola Pig!');
+var scores, roundScore, activePlayer;
+
+scores = [0, 0];
+roundScore = 0;
+activePlayer = 1;
+
+var x = document.querySelector('#score-0').textContent;
+
+document.querySelector('.dice').style.display = 'none';
+
+
+document.querySelector('.btn-roll').addEventListener('click', function () {
+    // 1. random number
+    var dice = Math.floor(Math.random() * 6) + 1;
+
+    // 2. display the result
+    var diceDOM = document.querySelector('.dice');
+    diceDOM.style.display = 'block';
+    diceDOM.src = '/img/dice-' + dice + '.png';
+
+    // 3. Update the round score IF the rolled number was NOT a 1
+});
+
+
+
+
+
+
+
+
+
+
+
+// NOTES:
+
+
+// Callback function is the one that is called as a parameter in the addEventListener method.
+
+    // document.querySelector('.btn-roll').addEventListener('click', btn);
+
+// Anonymous function is the one that is declared just inside the addEventListener method. 
+
+    // document.querySelector('.btn-roll').addEventListener('click', function{
+    //    example;
+    //});
+
+// document.querySelector('#current-' + activePlayer).textContent = dice;
+// document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
