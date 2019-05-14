@@ -100,6 +100,33 @@ i {
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
 
+input {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #555;
+    background: none;
+    // border: none;
+    font-family: Lato;
+    font-size: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+    transition: background-color 0.3s, color 0.3s;
+}
+.final-score {
+    background-color: white;
+    top: 80px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+#dice-1 { top: 120px; }
+#dice-2 { top: 250px; }
+
 .dice {
     position: absolute;
     left: 50%;
