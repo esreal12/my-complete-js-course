@@ -384,5 +384,9 @@ c) correct answer (I would use a number for this)
 
 
 function Question (question, answer, correctAnswer) {
-
+    this.question = question;
+    this.answer = answer;
+    this.correctAnswer = correctAnswer;
 }
+
+Question('What\'s my age again?', );
