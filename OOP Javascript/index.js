@@ -29,8 +29,6 @@ console.log(israel.lasName);
 console.log(isabel.lasName);
 console.log(sebas.lasName);
 */
-
-
 // Object.create
 /*
 var personProto = {
@@ -50,7 +48,6 @@ var sebas = Object.create(personProto, {
     job: { value: 'Veterinario' }
 });
 */
-
 // Primitives vs Objects
 /*
 // Primitives
@@ -89,11 +86,6 @@ change(age, obj);
 console.log(age);
 console.log(obj.city);
 */
-
-
-
-
-
 /////////////////////////////////////////////////////////////
 // Lecture: Passing functions as arguments
 /////////////////////////////////////////////////////////////
@@ -104,7 +96,7 @@ function arrayCal(arr, fn) {
     var arrRes = [];
     for (var i = 0; i < arr.length; i++) {
         arrRes.push(fn(arr[i]));
-    } 
+    }
     return arrRes;
 }
 
@@ -132,11 +124,6 @@ console.log(ages);
 console.log(fullAges);
 console.log(rates);
 */
-
-
-
-
-
 /////////////////////////////////////////////////////////////
 // Lecture: Functions Returning Functions
 /////////////////////////////////////////////////////////////
@@ -148,7 +135,7 @@ function interviewQuestion(job) {
         }
     } else if (job === 'Teacher') {
         return function(name) {
-            console.log('What subject do you teach, ' + name + '?');  
+            console.log('What subject do you teach, ' + name + '?');
         }
     } else {
         return function (name) {
@@ -174,7 +161,7 @@ function doYouHaveMoney(answer) {
     if(answer === 'Yes') {
         return function (name) {
             console.log('Dime ' + name + ', cuánto tienes ahí?');
-        } 
+        }
     } else {
         return function (name) {
             console.log('Dime ' + name + ', qué se siente estar en la pobreza?');
@@ -191,11 +178,6 @@ youHaveMoney('Shebillo');
 doYouHaveMoney('Yes')('El Papillo');
 
 */
-
-
-
-
-
 /////////////////////////////////////////////////////////////
 // Lecture: Immediately Invoked Function Expressions (IIFE)
 /////////////////////////////////////////////////////////////
@@ -219,10 +201,6 @@ game();
     console.log(score >= 5 - goodLuck);
 })(5);
 */
-
-
-
-
 /////////////////////////////////////////////////////////////
 // Lecture: Closures
 /////////////////////////////////////////////////////////////
@@ -255,7 +233,7 @@ function interviewQuestion (job) {
         if (job === 'Designer') {
                 console.log(name + a);
         } else if (job === 'Teacher') {
-                console.log(b + name + c);  
+                console.log(b + name + c);
         } else {
                 console.log(d + name + e);
         }
@@ -273,15 +251,9 @@ professional2('Sebastian');
 professional3('Carlos');
 
 */
-
-
-
-
-
 /////////////////////////////////////////////////////////////
 // Lecture: Bind, Call and Apply
 /////////////////////////////////////////////////////////////
-
 // var israel = {
 //     name:   'Israel',
 //     age:    29,
@@ -305,37 +277,24 @@ professional3('Carlos');
 //         }
 //     }
 // };
-
 // var isabel = {
 //     name:   'Isabel',
 //     age:    15,
 //     job:    'Student'
 // };
-
 // // israel.presentation('formal', 'morning');
-
 // // CALL
 // israel.presentation.call(isabel, 'friendly', 'night!'); // Object.method.call(this, parmeter1, parameter2)
-
 // // APPLY
 // // israel.presentation.apply(isabel, ['friendly', 'afternoon']); // this is not going to work
-
 // // BIND
 // // .bind(this, 1Parameter) returns a function, 
 // var israelFriendly = israel.presentation.bind(israel, 'friendly');
 // var isabelFormal = israel.presentation.bind(isabel, 'formal');
-
 // israelFriendly('morning');
 // israelFriendly('afternoon');
-
 // isabelFormal('night!');
-
-
-
-
-
 // var years = [1989, 1990, 1991, 1992, 2005];
-
 // function arrayCal(arr, fn) {
 //     var arrRes = [];
 //     for (var i = 0; i < arr.length; i++) {
@@ -343,27 +302,19 @@ professional3('Carlos');
 //     } 
 //     return arrRes;
 // }
-
 // function calculateAge(el) {
 //     return 2016 - el;
 // }
-
 // function isFullAge(limit, el) {
 //     return el >= limit;
 // }
-
 // var ages = arrayCal(years, calculateAge);
 // var fullJapan = arrayCal(ages, isFullAge.bind(this, 20));
 // console.log(ages);
 // console.log(fullJapan);
-
-
-
-
 /////////////////////////////////////////////////////////////
 // CHALLENGE ONE
 /////////////////////////////////////////////////////////////
-
 /*
 --- Let's build a fun quiz game in the console! ---
 1. Build a function constructor called Question to describe a question. A question should include:
@@ -372,21 +323,75 @@ b) the answers from which the player can choose the correct one (choose an adequ
 c) correct answer (I would use a number for this)
 2. Create a couple of questions using the constructor
 3. Store them all inside an array
-4. Select one random question and log it on the console, together with the possible answers (each question should have a number) 
+4. Select one random question and log it on the console, together with the possible answers (each question should have a number)
    (Hint: write a method for the Question objects for this task).
-5. Use the 'prompt' function to ask the user for the correct answer. The user should input the number of the correct 
+5. Use the 'prompt' function to ask the user for the correct answer. The user should input the number of the correct
    answer such as you displayed it on Task 4.
 6. Check if the answer is correct and print to the console whether the answer is correct ot nor (Hint: write another method for this).
 7. Suppose this code would be a plugin for other programmers to use in their code. So make sure that all your code is private and doesn't
    interfere with the other programmers code (Hint: we learned a special technique to do exactly that).
 */
 
+// 1. Build a function constructor called Question to describe a question. A question should include:
+// a) question itself
+// b) the answers from which the player can choose the correct one (choose an adequate data structure here, array, object, etc.)
+// c) correct answer (I would use a number for this)
+class Question {
+    constructor(question, answers, correctAnswer) {
+        this.question = question;
+        this.answers = answers;
+        this.correctAnswer = correctAnswer;
+    };
+};
 
+// 2. Create a couple of questions using the constructor
+// 3. Store them all inside an array
+var questions = [
+    new Question('Cuál es mi nombre?', ['Israel', 'Juan', 'Zacarías'], 0),
+    new Question('En qué país nací?', ['Alemania', 'India', 'Costa Rica'], 2),
+    new Question('Cuántas lagartijas hay en mi jardín', ['1', 'ninguna', '2'], 2),
+];
 
-function Question (question, answer, correctAnswer) {
-    this.question = question;
-    this.answer = answer;
-    this.correctAnswer = correctAnswer;
-}
+// 4. Select one random question and log it on the console, together with the possible answers (each question should have a number)
+//    (Hint: write a method for the Question objects for this task).
+var randomQuestion = Math.round(Math.random() * 2);
 
-Question('What\'s my age again?', );
+Question.prototype.showQuestions = function () {
+    if (randomQuestion === 0) {
+        console.log(questions[0].question);
+        console.log('0: ' + questions[0].answers[0]);
+        console.log('1: ' + questions[0].answers[1]);
+        console.log('2: ' + questions[0].answers[2]);
+    } else if (randomQuestion === 1) {
+        console.log(questions[1].question);
+        console.log('0: ' + questions[1].answers[0]);
+        console.log('1: ' + questions[1].answers[1]);
+        console.log('2: ' + questions[1].answers[2]);
+    } else {
+        console.log(questions[2].question);
+        console.log('0: ' + questions[2].answers[0]);
+        console.log('1: ' + questions[2].answers[1]);
+        console.log('2: ' + questions[2].answers[2]);
+    }
+};
+
+// 5. Use the 'prompt' function to ask the user for the correct answer. The user should input the number of the correct
+//    answer such as you displayed it on Task 4.
+// var userAnswer = prompt('Escriba la respuesta correcta (usando el número):');
+
+// 6. Check if the answer is correct and print to the console whether the answer is correct ot nor (Hint: write another method for this).
+Question.prototype.verifyAnswer = function (userAnswer) {
+
+    let correctAnswer = questions[randomQuestion].correctAnswer;
+    
+    if (correctAnswer === userAnswer) {
+        console.log('Respuesta correcta');
+    } else {
+        console.log('No es correcto, inténtalo de nuevo');
+    }
+};
+
+var showQuestion = Question.prototype.showQuestions();
+
+// console.log(questions[0]);
+
