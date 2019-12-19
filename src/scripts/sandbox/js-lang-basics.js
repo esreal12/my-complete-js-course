@@ -33,9 +33,9 @@ import { Agent } from 'http';
 // console.log("%cVariable Mutation and Type Coercion:", 'color: #FF7433; font-weight: bolder');
 
 // var firstName   = 'Israel';
-// // var lastName    = 'Umaña Sedó';
+// var lastName    = 'Umaña Sedó';
 // var age         = 29;
-// // var fullAge     = true;
+// var fullAge     = true;
 // var job         = 'Web Content Developer';
 // var isMarried   = false;  
 
@@ -240,7 +240,7 @@ GOOD LUCK 😀
 // var age       = 58;
 
 // // Ternary Operator
-// age >=18 ? console.log(firstName + ' drinks wine.') : console.log(firstName + ' drinks juice.');
+// age >= 18 ? console.log(firstName + ' drinks wine.') : console.log(firstName + ' drinks juice.');
 // // (statement) ? (do) : (do)
 // // ? = If condition is true. : = Else.
 
@@ -427,10 +427,7 @@ Functions Statements and Expressions
 // console.log("%cFunctions Statements and Expressions:", 'color: #FF7433; font-weight: bolder');
 
 // Function Declaration
-// function whatDoYouDo (job, firstName) {
-
-// }
-
+// function whatDoYouDo (job, firstName) {}
 
 // Function Expression
 // var whatDoYouDo = function (job, firstName) {
@@ -644,7 +641,7 @@ Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and heig
 //     }
 // };
 
-// if (john.calcBMI() > mark.calcBMI()) { // Se pueden correr las funcines dentro del If Statement
+// if (john.calcBMI() > mark.calcBMI()) { // Se pueden correr las funciones dentro del If Statement
 //     console.log('John has the highest BMI with: ' + john.BMI);
 // } else if (john.BMI == mark.BMI) {
 //     console.log('Both have ' + john.BMI + ' BMI');
