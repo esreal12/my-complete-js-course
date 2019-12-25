@@ -31,24 +31,74 @@ divide it by the number of elements in it (that's how you calculate the average)
 
 8. Log to the console which family paid the highest tips on average */
 
-var bills = {
+var john = {
     values: [124, 48, 268, 180, 42],
     tips: [],
     finalValues: [],
-    calcTips: () => bills.values.forEach(bill => {
+    calcTips: () => john.values.forEach(bill => {
         // let tip, total;
         if (bill < 50) {
-            tip = bills.tips.push(Math.round(bill * .2));
-            total = bills.finalValues.push(tip + bill);
+            tip = john.tips.push(Math.round(bill * .2));
+            total = john.finalValues.push(tip + bill);
         } else if (bill >= 50 && bill <= 200) {
-            tip = bills.tips.push(Math.round(bill * .15));
-            total = bills.finalValues.push(tip + bill);
+            tip = john.tips.push(Math.round(bill * .15));
+            total = john.finalValues.push(tip + bill);
         } else {
-            tip = bills.tips.push(Math.round(bill * .1));
-            total = bills.finalValues.push(tip + bill);
+            tip = john.tips.push(Math.round(bill * .1));
+            total = john.finalValues.push(tip + bill);
         }
     })
 };
-bills.calcTips();
-console.log('Tips: ' + bills.tips);
-console.log('Final Values: ' + bills.finalValues);
+
+var mark = {
+    values: [77, 375, 110, 45],
+    tips: [],
+    finalValues: [],
+    calcTips: () => mark.values.forEach(bill => {
+        // let tip, total;
+        if (bill < 100) {
+            tip = mark.tips.push(Math.round(bill * .2));
+            total = mark.finalValues.push(tip + bill);
+        } else if (bill >= 100 && bill <= 300) {
+            tip = mark.tips.push(Math.round(bill * .1));
+            total = mark.finalValues.push(tip + bill);
+        } else {
+            tip = mark.tips.push(Math.round(bill * .25));
+            total = mark.finalValues.push(tip + bill);
+        }
+    })
+};
+
+john.calcTips();
+mark.calcTips();
+
+const markArr = mark.values;
+const johnArr = john.values;
+
+
+function calculateEverything (arr, name, object) {
+    const calcMinimum = arr => Math.min(...arr);
+    const calcMaximum = arr => Math.max(...arr);
+    const calcSum = arr.reduce((sum, element) => sum + element, 0);
+    const calcAvg = arr.reduce((sum, element) => sum + element, 0) / markArr.length;
+
+    console.log(name + '\'s' + ' minimum number: ' + calcMinimum(arr));
+    console.log(name + '\'s' + ' maximum number: ' + calcMaximum(arr));
+    console.log(name + '\'s' + ' sum: ' + calcSum);
+    console.log(name + '\'s' + ' average: ' + calcAvg);
+
+    object.average = calcAvg;
+    console.log(object);
+}
+
+calculateEverything(markArr, 'Mark', mark);
+console.log('----------');
+calculateEverything(johnArr, 'John', john);
+
+if (mark.average > john.average) {
+    console.log('Mark\'s AVG is higher than John\'s');
+} else if (mark.average === john.average){
+    console.log('It\'s a draw!!');
+} else {
+    console.log('John\'s AVG is higher than Mike\'s');
+}
